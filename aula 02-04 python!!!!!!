@@ -1,0 +1,202 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNqZFp/u1DSsNYjt3/oaPiy",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/anamesmoo/calculadora/blob/main/aula%2002-04%20python!!!!!!\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 5,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "q9AIuwidh7Sh",
+        "outputId": "88daf014-f442-456a-9b29-8353925cb47b"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            ".config\n",
+            "./.config\n",
+            "True\n",
+            ".ipynb_checkpoints\n",
+            "./.ipynb_checkpoints\n",
+            "True\n",
+            "aula0204\n",
+            "./aula0204\n",
+            "True\n"
+          ]
+        }
+      ],
+      "source": [
+        "import os\n",
+        "try:\n",
+        "  arquivos = os.scandir()\n",
+        "  for obj in arquivos:\n",
+        "    print(obj.name)\n",
+        "    print(obj.path)\n",
+        "    print(obj.is_dir())\n",
+        "except FileNotFoundError:\n",
+        "   print(\"Caminho não existe\")\n",
+        "\n",
+        "except NotADirectoryError:\n",
+        "  print(\"O caminho ñ é diretório\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "exercicio 2\n"
+      ],
+      "metadata": {
+        "id": "lif1KIqLrudg"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "try:\n",
+        "  inteiro1 = int(input('Digite um número inteiro:'))\n",
+        "  inteiro2 = int(input('Digite outro número inteiro:'))\n",
+        "\n",
+        "  resultado = inteiro1 / inteiro2\n",
+        "  print('o resultado da divisão é', resultado)\n",
+        "\n",
+        "except ZeroDivisionError:\n",
+        "  print('divisão por zero!')\n",
+        "\n",
+        "except ValueError:\n",
+        "  print('isso é palavra sua burra!!!!')\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Ketr44vvjDtH",
+        "outputId": "70ee4bc9-9c05-4a17-d574-b207b56fc80d"
+      },
+      "execution_count": 34,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite um número inteiro:12\n",
+            "Digite outro número inteiro:2\n",
+            "o resultado da divisão é 6.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "exercicio 3"
+      ],
+      "metadata": {
+        "id": "qoT-YMVnrqBo"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "\n",
+        "def fatorial (n):\n",
+        "  if n == 0:\n",
+        "    return 1\n",
+        "  else:\n",
+        "    return n * fatorial(n-1)\n",
+        "\n",
+        "try:\n",
+        "  lista = [5, 6, 7, 8, -2]\n",
+        "  for inteiro in lista:\n",
+        "    resultado = fatorial(inteiro)\n",
+        "  print('fatorial de', inteiro, 'é', resultado)\n",
+        "\n",
+        "except RecursionError:\n",
+        " print('isso é um negativo seu burrão, nao existe!')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DchDiFO1mO7I",
+        "outputId": "26712e66-bc68-48c5-9c4d-34f8e71f5300"
+      },
+      "execution_count": 33,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "isso é um negativo seu burrão, nao existe!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "\n",
+        "def fatorial (n):\n",
+        "  if n == 0:\n",
+        "    return 1\n",
+        "  else:\n",
+        "    return n * fatorial(n-1)\n",
+        "\n",
+        "try:\n",
+        "  lista = [5, 6, 7, 8, azul]\n",
+        "  for inteiro in lista:\n",
+        "    resultado = fatorial(inteiro)\n",
+        "  print('fatorial de', inteiro, 'é', resultado)\n",
+        "\n",
+        "except NameError:\n",
+        "  print('azul n é numero neee')\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "YoEFjrrHrhMY",
+        "outputId": "8a53e4e7-e02b-4400-e71d-df1a3c946a5f"
+      },
+      "execution_count": 32,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "azul n é numero neee\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
